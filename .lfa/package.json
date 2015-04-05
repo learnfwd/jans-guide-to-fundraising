@@ -1,0 +1,14 @@
+{
+  "name": "jans-guide-to-fundraising",
+  "version": "1.0.0",
+  "keywords": [
+    "lfa-book"
+  ],
+  "book": {
+    "title": "Guide to Fundraising (Jan Matern)",
+    "language": "en"
+  },
+  "engines": {
+    "lfa": "~0.7.0"
+  }
+}

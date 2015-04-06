@@ -1,0 +1,47 @@
+mixin pg
+  .row
+    .col-sm-2.hidden-xs
+      img.img-circle(src='img/pg.jpg' )
+    .col-sm-10
+      block
+  //- .media
+  //-   .media-left
+  //-     a(href="#")
+  //-       img.img-circle.media-object(src="img/pg.jpg", alt="Paul Graham")
+  //-   .media-body
+  //-       block
+
+mixin quote(name)
+  //- .row
+  //-   .col-sm-2.hidden-xs
+  //-     if name == 'pg'
+  //-       img.img-circle(src='img/pg.jpg' )
+  //-     else 
+  //-       p VH
+  //-   .col-sm-10
+  //-     .quote
+  //-       block
+  .media
+    .media-left
+      a(href='#').pull-left
+        if name == 'pg'
+          img.img-circle.img-source.media-object(src='img/pg.jpg', alt='Paul Graham')
+        else
+          img.img-source.media-object(src='img/Peace-Logo-Alpha.png', alt="Venture Hacks")
+      .media-body
+        .quote
+          block
+
+mixin panel(title)
+  - var id = Math.floor(Math.random()*100000);
+  - var id = 'Collapse'+id;
+  - var classid = '#'+id;
+  .panel.panel-primary
+    .panel-heading
+      h4.panel-title
+        a(data-toggle='collapse', data-parent='#accordion', href=classid)= title
+    | <div id="#{id}" class="panel-collapse collapse">
+    |  <div class="panel-body">
+    block
+    |  </div>
+    | </div>
